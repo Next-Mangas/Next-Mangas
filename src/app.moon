@@ -1,5 +1,10 @@
 lapis = require "lapis"
 
 class extends lapis.Application
-  "/": =>
-    "Welcome to Lapis #{require "lapis.version"}!"
+  @enable "etlua"
+  [index: "/"]: =>
+    @manga_data = {
+      highlight: { "Manga", "Info", "array" },
+      genres: {}
+    }
+    render: true
